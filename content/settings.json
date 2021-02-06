@@ -1,0 +1,26 @@
+{
+  "homepage": "home",
+  "title": "Poimisto Starter",
+  "siteUrl": "https://www.poimisto.com",
+  "home": {
+    "title": "Poimisto Oy"
+  },
+  "navigation": [
+    {
+      "type": "link",
+      "title": "Ota yhteyttä",
+      "link": "/yhteystiedot"
+    },
+    {
+      "type": "page",
+      "link": "/yhteystiedot",
+      "title": "Yhteystiedot"
+    },
+    {
+      "type": "post",
+      "title": "My cool post",
+      "link": "/miten-hyodynnat-dataa-jota-sinulla-ei-ole"
+    }
+  ],
+  "navtype": "normal"
+}
