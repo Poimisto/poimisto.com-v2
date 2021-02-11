@@ -1,7 +1,7 @@
 import CMS from "netlify-cms-app"
-import ctaEditor from "./editor-components/cta"
-import heroBlock from "./editor-components/heroBlock"
-import latestPosts from "./editor-components/LatestPosts"
+import ctaEditor from "./editor-components/ctaEditor"
+import heroBlock from "./editor-components/heroBlockEditor"
+import latestPosts from "./editor-components/latestPostsEditor"
 import PreviewTemplate from './preview-templates/page'
 CMS.registerPreviewStyle("/admin/editor-style.css");
 
