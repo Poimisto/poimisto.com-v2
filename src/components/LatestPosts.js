@@ -86,7 +86,7 @@ export default function PostList(props) {
           if ( counter > maxNumberOfPosts) return false;
           else return true;
         }) 
-        .map(edge => <Grid item xs={12} sm={6}><PostLink key={edge.node.id} post={edge.node} /></Grid>)
+        .map(edge => <Grid item xs={12} sm={6} key={edge.node.id}><PostLink post={edge.node} /></Grid>)
         return (
           <div>
             <h2>{props.title} &darr;</h2>

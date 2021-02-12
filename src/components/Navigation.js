@@ -51,9 +51,9 @@ export default (props) => {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {settings.navigation.map( (navItem) => {
+        {settings.navigation.map( (navItem, index) => {
           return (
-            <ListItem button key={navItem.link}>
+            <ListItem button key={navItem.link} key={index}>
               <Link to={navItem.link}>
                 <ListItemIcon><InboxIcon /></ListItemIcon>
                 <ListItemText primary={navItem.title} /> 
@@ -79,7 +79,7 @@ export default (props) => {
       <>
         {settings.navigation.map( (navItem, index) => {
           return (
-            <StyledLink to={navItem.link}>
+            <StyledLink to={navItem.link} key={navItem.link + '-' + navItem.title}>
                 {navItem.title}
             </StyledLink>
           )
