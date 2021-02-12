@@ -1,9 +1,11 @@
 ---
 path: /home
-thumbnail: /assets/react-angular-vue.png
+thumbnail: /assets/proxyclick-visitor-management-system-s86whghp25y-unsplash.jpg
 date: 2020-11-15T20:33:13.757Z
 title: Digitaalisen liiketoiminnan kehitys ja konsultointi
-metaDescription: test
+metaDescription: Searching for your ways, through adventures every day. Every
+  day and night, with the condor in flight, with all your friends in tow, you
+  search for the Cities of Gold. Ah-ah-ah-ah-ah… wishing for The Cities of Gold.
 ---
 
 <HeroBlock bgColor="dark">

@@ -1,7 +1,7 @@
 {
   "homepage": "home",
   "title": "Poimisto Starter",
-  "siteUrl": "https://www.poimisto.com",
+  "siteUrl": "https://pmt-gatsby-starter-v0.netlify.app",
   "home": {
     "title": "Poimisto Oy"
   },
@@ -22,5 +22,7 @@
       "link": "/miten-hyodynnat-dataa-jota-sinulla-ei-ole"
     }
   ],
-  "navtype": "normal"
+  "navtype": "normal",
+  "thumbnail": "/assets/poimisto-short-300x300.png",
+  "description": "This is the default description to be used"
 }

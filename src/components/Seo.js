@@ -9,12 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 
-function SEO({ description, lang, meta, title, author }) {
+function SEO({ description, lang, meta, title, author, image }) {
 
   const settings = require('../../content/settings.json')
 
-  const metaDescription = description;
+  const metaDescription = description || settings.description;
   const defaultTitle = settings.title
+  const img = settings.siteUrl + (image || settings.thumbnail);
 
   return (
     <Helmet
@@ -41,6 +42,10 @@ function SEO({ description, lang, meta, title, author }) {
           content: `website`,
         },
         {
+          property: `og:image`,
+          content: img
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -55,6 +60,10 @@ function SEO({ description, lang, meta, title, author }) {
         {
           name: `twitter:description`,
           content: metaDescription,
+        },
+        {
+          property: `twitter:image`,
+          content: img,
         },
       ].concat(meta)}
     />

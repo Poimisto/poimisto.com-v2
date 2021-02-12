@@ -136,6 +136,7 @@ const EntryTemplate = ({data}) => {
         lang="fi" 
         description={data.mdx.frontmatter.metaDescription} 
         title={data.mdx.frontmatter.title}
+        image={data.mdx.frontmatter.thumbnail ? data.mdx.frontmatter.thumbnail.childImageSharp.fixed.src : null}
       />
       {data.mdx.fields.collection === 'posts' && (
         <div>
@@ -197,6 +198,9 @@ export const pageQuery = graphql`
           childImageSharp {
             fluid(maxWidth: 900) {
               ...GatsbyImageSharpFluid
+            }
+            fixed(width: 600, height: 600) {
+              src
             }
           }
         }

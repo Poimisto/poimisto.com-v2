@@ -8,6 +8,22 @@ const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const config = require('./content/settings.json');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+
+  const typeDefs = `
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    
+    type Frontmatter @infer {
+      thumbnail: File @fileByRelativePath,
+    }
+  `;
+  createTypes(typeDefs);
+  createTypes(typeDefs)
+}
+
 exports.onCreateNode = async ({ node, getNode, actions }) => {
  
   const { createNodeField } = actions;

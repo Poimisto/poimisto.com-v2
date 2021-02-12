@@ -24,14 +24,16 @@ const PostLink = ({ post }) => (
   <Link to={post.fields.slug}>
     <Card>
     <CardActionArea>
-        <CardMedia
+        {post.frontmatter.thumbnail && (
+          <CardMedia
           component="img"
           alt={post.frontmatter.title}
           height="240"
           image={post.frontmatter.thumbnail.childImageSharp.fluid.src}
           title={post.frontmatter.title}
           style={{textDecoration:"none"}}
-        />
+          />
+        )}
         <CardContent>
           <PostTitle>{post.frontmatter.title}</PostTitle>
           {post.excerpt}
