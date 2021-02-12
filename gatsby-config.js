@@ -10,7 +10,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    'gatsby-plugin-polished',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

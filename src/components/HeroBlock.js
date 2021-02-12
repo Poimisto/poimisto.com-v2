@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import {Container} from './../templates/layout';
 
 import styled from 'styled-components'
-import { lighten, shade, getContrast, retinaImage } from 'polished'
+import { getContrast } from 'polished'
 import theme from './../theme';
 
 import Background from './Background'
