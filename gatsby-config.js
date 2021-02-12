@@ -10,7 +10,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-styled-components`,
+    'gatsby-plugin-polished',
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -74,33 +74,6 @@ module.exports = {
     },
 
 
-    /*
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          // Including in your Remark plugins will transform any paths in your markdown body
-          {
-            resolve: `gatsby-plugin-netlify-cms-paths`,
-            options: {
-              cmsConfig: `/static/admin/config.yml`,
-            }
-          }, 
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 1200,
-              backgroundColor: 'transparent', // required to display blurred image first
-              
-            },
-          },
-        ],
-      }
-    },
-    */
     {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
@@ -150,10 +123,6 @@ module.exports = {
       options: {
         fonts: {
           google: [
-            {
-              family: "Courgette",
-              variants: ["400"],
-            },
             {
               family: "Itim",
               variants: ["400"],

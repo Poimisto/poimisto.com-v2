@@ -85,7 +85,7 @@ const ArticleContent = styled.div`
     color: ${props => props.theme.colors.brand};;
     padding:0;
     margin:-4px 6px;
-    font-family: ${props => props.theme.styledFontFamily};
+    font-family: ${props => props.theme.dropCapsFontFamily};
     font-size: 4rem;
     float: left;
     line-height: 1;
@@ -116,7 +116,7 @@ const ArticleMetadata = styled.div`
     border-radius:10px;
     background: ${props => props.theme.colors.brand};
     color:${props => getContrast(props.theme.colors.darkest, props.theme.colors.brand) > 10 ? props.theme.colors.darkest : props.theme.colors.lightest };
-    font-family:${props => props.theme.styledFontFamily};
+    font-family:${props => props.theme.headingFontFamily};
   }
   @media (max-width: ${props => props.theme.mobileBreakpoint}px) {    
     display:none;
