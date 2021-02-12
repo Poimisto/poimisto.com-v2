@@ -4,6 +4,12 @@ author: Santeri Salonen
 path: /miten-hyodynnat-dataa-jota-sinulla-ei-ole
 date: 2020-12-30T09:06:33.306Z
 title: Miten hyödynnät dataa, jota sinulla ei ole?
+metaDescription: >-
+  Sanotaan, että data on uusi öljy. Näin on sanottu sen verran usein, että se on
+  jo muuttunut kliseeksi Mutta vaikka data olisikin uusi öljy, mitä väliä?
+
+
+  Ei siitä väistämättä seuraa, että sinun tulisi ryhtyä keräämään ja varastoimaan dataa. Ei öljystäkään seurannut, että kaikkien piti alkaa porata öljyä.
 thumbnail: /assets/noah-buscher-txhp_xkwjeo-unsplash.jpg
 ---
 Sanotaan, että data on uusi öljy. Näin on sanottu sen verran usein, että se on jo muuttunut kliseeksi Mutta vaikka data olisikin uusi öljy, mitä väliä?
