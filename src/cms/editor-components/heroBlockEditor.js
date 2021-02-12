@@ -5,7 +5,7 @@ const colors = Object.keys(theme.colors);
 const editor = props =>`
 <HeroBlock bgColor="${props.bgColor}">
 
-${props.body.trim()}
+${props.body ? props.body.trim() : ''}
 
 </HeroBlock>`
 
