@@ -12,7 +12,7 @@ export default {
   },
   bodyFontFamily: 'Open Sans, sans-serif',
   headingFontFamily: 'Crete Round, serif',
-  styledFontFamily: 'Itim',
+  dropCapsFontFamily: 'Itim',
   bodyLineHeight:'150%',
   fontSize: '100%',
   mobileBreakpoint : 762,
