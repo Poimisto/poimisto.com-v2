@@ -38,6 +38,7 @@ module.exports = {
             options: {
               maxWidth: 1200,
               backgroundColor: 'transparent', // required to display blurred image first
+              linkImagesToOriginal: false,
             },
           },
         ],
