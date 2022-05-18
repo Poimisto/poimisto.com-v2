@@ -1,20 +1,19 @@
 ---
 template: BlogPost
+language: fi
 author: Santeri Salonen
 path: /miten-hyodynnat-dataa-jota-sinulla-ei-ole
 date: 2020-12-30T09:06:33.306Z
+thumbnail: /assets/cam-adams-jz4gnqznxtu-unsplash.jpg
+imageCredit: "@shawnanggg"
 title: Miten hyödynnät dataa, jota sinulla ei ole?
-metaDescription: >-
-  Sanotaan, että data on uusi öljy. Näin on sanottu sen verran usein, että se on
-  jo muuttunut kliseeksi Mutta vaikka data olisikin uusi öljy, mitä väliä?
-
-
-  Ei siitä väistämättä seuraa, että sinun tulisi ryhtyä keräämään ja varastoimaan dataa. Ei öljystäkään seurannut, että kaikkien piti alkaa porata öljyä.
-thumbnail: /assets/noah-buscher-txhp_xkwjeo-unsplash.jpg
+imageCreditURL: https://unsplash.com/@shawnanggg
 ---
-Sanotaan, että data on uusi öljy. Näin on sanottu sen verran usein, että se on jo muuttunut kliseeksi Mutta vaikka data olisikin uusi öljy, mitä väliä?
+Sanotaan, että data on uusi öljy. Näin on sanottu sen verran usein, että se on jo muuttunut kliseeksi.
 
-Ei siitä väistämättä seuraa, että sinun tulisi ryhtyä keräämään ja varastoimaan dataa. Ei öljystäkään seurannut, että kaikkien piti alkaa porata öljyä.
+Mutta vaikka data olisikin uusi öljy, mitä väliä?
+
+Ei siitä väistämättä seuraa, että sinun tulisi ryhtyä keräämään ja varastoimaan dataa. Ei öljystäkään seurannut, että kaikkien piti alkaa porata öljyä. 
 
 Olennaista on ymmärtää, miten data voi muuttaa sitä arvoketjua, jonka osa yrityksesi on.
 
@@ -48,4 +47,7 @@ Business Intelligence -näkökulmasta dataa on relaatiotietokannoissa oleva data
 
 Data Science -näkökulmasta data voi olla myös ei-strukturoitua: asiakaspalvelun chat-lokeja, äänitallenteita, liikkuvaa kuvaa. Tätä dataa tarvitaan, kun mietitään miten asiakasarvoa voitaisiin parantaa nykyisissä kohtaamispisteissä, esimerkiksi koneoppimisen avulla.
 
-Liiketoiminnan näkökulmasta parasta dataa on kuitenkin sellainen data, jota kukaan ei vielä ymmärtänyt ajatella datana. Siinä on todellinen potentiaali.
+Liiketoiminnan näkökulmasta parasta dataa on kuitenkin sellainen data, jota kukaan ei vielä ymmärtänyt ajatella datana. Siinä on todellinen potentiaali. 
+
+
+

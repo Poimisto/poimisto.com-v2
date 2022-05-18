@@ -12,8 +12,10 @@ import Hidden from '@material-ui/core/Hidden';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import LatestPosts from './../components/LatestPosts'
-import { getContrast } from 'polished'
 import { createGlobalStyle } from 'styled-components'
+
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -29,8 +31,6 @@ const GlobalStyle = createGlobalStyle`
   }
   a {
     text-decaration:none;
-    text-transform:uppercase;
-    color:red;
   }
   button {
     text-decoration:none;
@@ -68,6 +68,7 @@ const GlobalStyle = createGlobalStyle`
   }
   font-size: ${props => props.theme.fontSize};
   line-height: ${props => props.theme.bodyLineHeight};
+
 `;
 
 const ArticleImg = styled(Img)`
@@ -76,13 +77,11 @@ const ArticleImg = styled(Img)`
     margin: -40px -40px;
   }
 `;
-const ArticleTitle = styled.h1`
-
-`;
+const ArticleTitle = styled.h1``;
 const ArticleContent = styled.div`
   /* Style that first letter! */
   > p:first-child::first-letter {
-    color: ${props => props.theme.colors.brand};;
+    color: ${props => props.theme.colors.darkest};;
     padding:0;
     margin:-4px 6px;
     font-family: ${props => props.theme.dropCapsFontFamily};
@@ -90,14 +89,10 @@ const ArticleContent = styled.div`
     float: left;
     line-height: 1;
   }
-  padding:0px 0px 0px 120px;
-  p {
-    padding-right:0px;
-  }
+  
+  margin-left: 200px;
   @media (max-width: ${props => props.theme.mobileBreakpoint}px) {
-    padding:0px 0px;  p {
-      padding-right:0px;
-    }
+    margin-left: 0px;
   }
   a {
     text-decoration:underline;
@@ -107,33 +102,52 @@ const ArticleContent = styled.div`
   }
 `;
 const ArticleMetadata = styled.div`
+  margin-top:22px;
   float:left;
-  margin-top:6px;
-
+  color:${props => props.theme.colors.dark};
   .date {
-    background:red;
-    padding:6px;
-    border-radius:10px;
-    background: ${props => props.theme.colors.brand};
-    color:${props => getContrast(props.theme.colors.darkest, props.theme.colors.brand) > 10 ? props.theme.colors.darkest : props.theme.colors.lightest };
-    font-family:${props => props.theme.headingFontFamily};
+    padding-bottom:6px;
+    border-bottom: 1px solid ${props => props.theme.colors.brand};
+    font-family: ${props => props.theme.monoSpaceFontFamily};
+  }
+  .post-author {
+    margin-top:5px;
+    font-family: ${props => props.theme.monoSpaceFontFamily};
   }
   @media (max-width: ${props => props.theme.mobileBreakpoint}px) {    
     display:none;
   }
-
 `;
 
+const ImageCredit = styled.div`
+  height:0px;
+  line-height:20px;
+  margin-right:8px;
+  position:relative;
+  text-align:right;
+  font-size:10px;
+  color:${props => props.theme.colors.light};
+  text-transform:uppercase;
+  letter-spacing:1px;
+  a {
+    font-size:10px;
+    color:${props => props.theme.colors.lightest};
+
+  }
+  
+
+`
 
 const shortcodes = { Link, CallToAction, HeroBlock, Grid, Hidden, LatestPosts }
 
 
 const EntryTemplate = ({data}) => {
+  let language = data.mdx.frontmatter.language || 'en';
   return (
     <Layout collection={data.mdx.fields.collection} slug={data.mdx.fields.slug}>
       <GlobalStyle/>
       <Seo 
-        lang="fi" 
+        lang={language} 
         description={data.mdx.frontmatter.metaDescription} 
         title={data.mdx.frontmatter.title}
         image={data.mdx.frontmatter.thumbnail ? data.mdx.frontmatter.thumbnail.childImageSharp.fixed.src : null}
@@ -142,25 +156,47 @@ const EntryTemplate = ({data}) => {
         <div>
           <ArticleTitle>{data.mdx.frontmatter.title}</ArticleTitle>
           {!!data.mdx.frontmatter.thumbnail && (
-            <HeroBlock bgColor="brand">
+            <HeroBlock bgColor="dark" imageAlign="none">
               <ArticleImg
                 fluid={data.mdx.frontmatter.thumbnail.childImageSharp.fluid}
                 alt={data.mdx.frontmatter.title + "- Featured Shot"}
-              />   
-              </HeroBlock>
+              />
+              {!!data.mdx.frontmatter.imageCredit && (
+                <ImageCredit>
+                  Image:&nbsp;
+                  {!!data.mdx.frontmatter.imageCreditURL && (
+                    <a href={data.mdx.frontmatter.imageCreditURL}>{data.mdx.frontmatter.imageCredit}</a>
+                  )}
+                  {!data.mdx.frontmatter.imageCreditURL && (
+                    <span>{data.mdx.frontmatter.imageCredit}</span>
+                  )}
+                </ImageCredit>
+             
+              )}   
+            </HeroBlock>
+              
           )}
-          <ArticleMetadata>
-            <p>
-              <span className="date">{data.mdx.frontmatter.date}</span>
-            </p>
-          </ArticleMetadata>          
-          <ArticleContent>
-            <MDXProvider components={shortcodes}>
-              <MDXRenderer>
-                {data.mdx.body}
-              </MDXRenderer>
-            </MDXProvider>
-          </ArticleContent>
+
+            <ArticleMetadata>
+              <div className="date">{data.mdx.frontmatter.date}</div>
+              {!!data.mdx.frontmatter.author && (
+                <div className="post-author">
+                  {data.mdx.frontmatter.author}
+                </div>
+              )}
+              
+
+          
+            </ArticleMetadata>          
+            <ArticleContent>
+              <MDXProvider components={shortcodes}>
+                <MDXRenderer>
+                  {data.mdx.body}
+                </MDXRenderer>
+              </MDXProvider>
+            </ArticleContent>            
+
+
         </div>
       )}
       {data.mdx.fields.collection === 'pages' && (
@@ -194,6 +230,10 @@ export const pageQuery = graphql`
         date(formatString: "DD.MM.YYYY")
         title
         metaDescription
+        author
+        imageCredit
+        imageCreditURL
+        language
         thumbnail {
           childImageSharp {
             fluid(maxWidth: 900) {

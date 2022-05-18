@@ -8,14 +8,25 @@ metaDescription: Searching for your ways, through adventures every day. Every
   search for the Cities of Gold. Ah-ah-ah-ah-ah… wishing for The Cities of Gold.
 ---
 
-<HeroBlock bgColor="dark">
+<HeroBlock bgColor="dark" imageAlign="right">
 
-# Children of the sun, see your time has just begun
+<div className="HeroBlockImage">
 
-Searching for your ways, through adventures every day. Every day and night, with the condor in flight, with all your friends in tow, you search for the Cities of Gold. Ah-ah-ah-ah-ah… wishing for The Cities of Gold. 
+![Santeri Salonen](/assets/wtn_2739-large-.jpg)
 
-> Ah-ah-ah-ah-ah… some day we will find The Cities of Gold. Do-do-do-do ah-ah-ah, do-do-do-do, Cities of Gold. Do-do-do-do, Cities of Gold. Ah-ah-ah-ah-ah… some day we will find The Cities of Gold.
+</div>
+
+<div className="HeroBlockContent">
+
+# Data consultancy 
+
+**Santeri Salonen** provides consulting services in data strategy, data engineering and data analytics, with 10+ years of experience.
+
+<CallToAction bgColor="brandSecondary" url="/contact" align="left">Get in touch</CallToAction>
+
+</div>
 
 </HeroBlock>
 
-<LatestPosts maxNumberOfPosts="4" title="Viimeisimmät artikkelit"/>
+
+<LatestPosts maxNumberOfPosts="16" title="Latest posts"/>

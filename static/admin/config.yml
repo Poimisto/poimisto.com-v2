@@ -132,10 +132,15 @@ collections:
           widget: hidden,
           default: BlogPost,
         }
+      - label: Language
+        name: language
+        widget: select
+        options: [en, fi]
+        default: en
       - name: author
         label: Author
         widget: relation
-        collection: employees
+        collection: people
         search_fields: ["authorname",]
         value_field: '{{fields.authorname}}'
         display_fields: ["authorname"]
@@ -159,6 +164,7 @@ collections:
           config:
             multiple: false
       - { name: body, label: Body, widget: markdown }
+
 
   - name: people
     label: People

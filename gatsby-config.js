@@ -50,6 +50,12 @@ module.exports = {
               disableBgImageOnAlpha: true,
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: false,
+            }
+          },
         ],
       },
     },
@@ -87,19 +93,6 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify-cms',
       options: {
         modulePath: `${__dirname}/src/cms/cms.js`, // for custom preview in the Netlify CMS,
-        customizeWebpackConfig: (config, { plugins }) => {
-          config.node = {
-            ...config.node,
-            fs: "empty",
-            child_process: "empty",
-            module: "empty",
-          };
-          config.plugins.push(
-            plugins.define({
-              __MANIFEST_PLUGIN_HAS_LOCALISATION__: JSON.stringify('false'),
-            }),
-          );
-        },
       }
     },
     {
@@ -143,6 +136,10 @@ module.exports = {
             {
               family: "Open Sans",
               variants: ["400", "400i", "700"]
+            },
+            {
+              family: "Roboto Mono",
+              variants: ["400"]
             }
 
           ]

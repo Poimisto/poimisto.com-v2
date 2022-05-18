@@ -9,14 +9,16 @@ import Grid from '@material-ui/core/Grid'
 
 import Navigation from './../components/Navigation'
 
+import logo from '../images/poimisto-logo.png' // Tell webpack this JS file uses this image
+import logoShort from '../images/poimisto-short-300x300.png';
+
 const Main = styled.div``;
 
 const Footer = styled.div`
-  border-top:1px solid ${props => props.theme.colors.darkest};
-  background: ${props => props.theme.colors.darkest};
-  color: ${props => props.theme.colors.light};
-  margin-top: 2rem;
-  padding:5rem;
+  color: ${props => props.theme.colors.dark};
+  padding:2.5rem 0 2.5rem 0;
+  border-top: 2px solid ${props => props.theme.colors.dark};
+  margin-top:2rem;
 `;
 const Header = styled.header`
   background: ${props => props.theme.colors.lightest};
@@ -52,6 +54,7 @@ const NavGridContainer = styled(Grid)`
   }
 `
 
+
 export default ({children}) => {
   return (
     <ThemeProvider theme={theme}>
@@ -60,7 +63,7 @@ export default ({children}) => {
           <NavGridContainer>
             <Grid item>
               <Link to="/">
-                <LogoImage src={require('../images/poimisto-logo.png')} alt="Logo" />
+                <LogoImage src={logo} alt="Logo" />
               </Link>
             </Grid>
             <Grid item>
@@ -76,10 +79,10 @@ export default ({children}) => {
         </Main>
       </Container>
       <Footer>
-        <Container>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+        <Container style={{lineHeight:'40px'}}>
+          
+        <img src={logoShort} width="40px" style={{float:"left",marginRight:'6px'}}/> Poimisto Oy © {new Date().getFullYear()}
+          
         </Container>  
       </Footer>
     </ThemeProvider>
