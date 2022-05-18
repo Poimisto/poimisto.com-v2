@@ -2,10 +2,10 @@
 template: BlogPost
 language: en
 author: Santeri Salonen
-path: /implementing-ga4-what-has-changed
+slug: /implementing-ga4-what-has-changed
 date: 2022-05-08T21:14:42.133Z
 title: Implementing Google Analytics for larger companies - what’s changed?
-thumbnail: /assets/google.jpg
+thumbnail: ../images/google.jpg
 imageCredit: Pawel Czerwinski
 metaDescription: Notes on implementing GA4 for larger organisations. GA4
   configuration, data streaming to Google BigQuery, using Server Side GTM,

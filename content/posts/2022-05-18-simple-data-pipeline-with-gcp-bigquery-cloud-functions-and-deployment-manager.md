@@ -2,9 +2,10 @@
 template: BlogPost
 language: en
 author: Santeri Salonen
-path: /gcp-deployment-manager-with-bigquery
+slug: /gcp-deployment-manager-with-bigquery
 date: 2022-05-18T13:26:50.761Z
 title: Simple serverless data pipeline with GCP
+disabled: true
 ---
 I am a big fan of using AWS Cloudformation when setting up data pipelines. With Cloudformation you can write your project requirements down as a YML-configuration file.
 
@@ -143,7 +144,8 @@ exports.handler = async () => {
         endDate: date
       }],
       dimensions: [],
-      metrics : [{name: "active1DayUsers"}],
+      metrics : [{name: "active1DayUsers"}],
+
     });
     await bigquery
       .dataset(process.env.BQ_DATASET_ID)

@@ -2,10 +2,10 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /kolme-tapaa-parantaa-markkinoinnin-mittareita
+slug: /kolme-tapaa-parantaa-markkinoinnin-mittareita
 date: 2021-03-01T12:28:42.426Z
 title: Kolme tapaa parantaa markkinoinnin mittareita
-thumbnail: /assets/hhh13-temu4lzal0w-unsplash.jpg
+thumbnail: ../images/hhh13-temu4lzal0w-unsplash.jpg
 ---
 ## 1. Keskity tulosta ennustaviin mittareihin
 

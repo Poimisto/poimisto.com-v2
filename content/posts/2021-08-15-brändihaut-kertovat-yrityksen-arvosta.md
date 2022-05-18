@@ -2,10 +2,10 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /brandihaut-kertovat-yrityksen-arvosta
+slug: /brandihaut-kertovat-yrityksen-arvosta
 date: 2021-08-15T21:13:26.512Z
 title: Brändihaut kertovat yrityksen arvosta
-thumbnail: /assets/solen-feyissa-uwvjadvxw_c-unsplash.jpg
+thumbnail: ../images/solen-feyissa-uwvjadvxw_c-unsplash.jpg
 imageCredit: Solen Feyissa
 metaDescription: "Jos yritys asiakkaiden mielissä yhdistyy johonkin
   tuotekategoriaan, niin se saa siitä merkittävää kilpailuetua heikompia

@@ -1,4 +1,4 @@
-export default {
+const theme = {
   containerMaxWidth: 800,
   colors: {
     brand: "#00CB26",
@@ -17,3 +17,4 @@ export default {
   fontSize: '100%',
   mobileBreakpoint : 762,
 }
+export default theme;

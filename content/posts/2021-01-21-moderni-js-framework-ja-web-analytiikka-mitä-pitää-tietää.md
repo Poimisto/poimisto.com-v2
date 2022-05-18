@@ -2,10 +2,10 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /javascript-frameworkit-ja-analytiikka
+slug: /javascript-frameworkit-ja-analytiikka
 date: 2021-01-21T10:12:14.839Z
 title: Moderni JS-framework ja web-analytiikka - mitä pitää tietää?
-thumbnail: /assets/react-angular-vue.png
+thumbnail: ../images/react-angular-vue.png
 ---
 Melko suuri osa uusista isojen yritysten ja kovaa kasvua tavoittelevien startupien verkkopalveluista toteutetaan nykyään niin sanottujen modernien Javascript-frameworkien avulla. 
 

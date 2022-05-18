@@ -1,14 +1,12 @@
 import React, {useState} from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import styled from 'styled-components';
 
 const StyledLink = styled(Link)`
@@ -53,7 +51,7 @@ export default (props) => {
       <List>
         {settings.navigation.map( (navItem, index) => {
           return (
-            <ListItem button key={navItem.link} key={index}>
+            <ListItem button key={navItem.link}>
               <Link to={navItem.link}>
                 <ListItemIcon><InboxIcon /></ListItemIcon>
                 <ListItemText primary={navItem.title} /> 

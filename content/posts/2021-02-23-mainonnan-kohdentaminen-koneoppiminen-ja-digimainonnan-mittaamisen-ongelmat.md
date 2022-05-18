@@ -2,14 +2,14 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /mainonnan-kohdentaminen-koneoppiminen-mittaaminen
+slug: /mainonnan-kohdentaminen-koneoppiminen-mittaaminen
 date: 2021-02-23T11:18:43.935Z
 title: Mainonnan kohdentaminen, koneoppiminen ja digimainonnan mittaamisen ongelmat
 metaDescription: "Digimainonnassa evästeisiin perustuva mittaaminen perustuu
   seuraavaan malliin: Käyttäjä näkee mainoksen. Tämän jälkeen käyttäjä päätyy
   suorittamaan oston. Tämän perusteella nähdyille mainokselle jaetaan ansiona
   toteutunut osto. "
-thumbnail: /assets/neonbrand-i6wcdyw6ij8-unsplash.jpg
+thumbnail: ../images/neonbrand-i6wcdyw6ij8-unsplash.jpg
 ---
 Ajattelin kirjoittaa muutaman postauksen verran markkinoinnin mittaamisesta. Tarkemmin sanottuna siitä, miten markkinoinnin tekemistä voitaisiin rakentaa asiakaspolun ympärille ja miten sen vaikuttavuutta liiketoimintaan voitaisiin mitata? 
 

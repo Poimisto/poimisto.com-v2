@@ -1,17 +1,16 @@
 import React from "react"
 import Card from '@material-ui/core/Card'
 
-
 import CardActionArea from '@material-ui/core/CardActionArea'
 import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
-
 import Grid from '@material-ui/core/Grid';
 import { StaticQuery, graphql, Link } from "gatsby"
-import { lighten, shade, getContrast } from 'polished'
-import theme from './../theme';
 
 import styled from 'styled-components'
+import { getSrc } from "gatsby-plugin-image"
+
+import theme from '../theme';
 
 const PostTitle = styled.h3`
   margin: 0px 0px 5px 0px;
@@ -45,7 +44,7 @@ const StyledCard = styled(Card)`
 const PostLink = ({ post }) => {
   const primaryColor = theme.colors[post.frontmatter.primaryColor] || theme.colors.light;
   return (
-    <Link to={post.fields.slug}>
+    <Link to={post.frontmatter.slug}>
       <StyledCard bgColor={primaryColor}>
       <CardActionArea>
           {post.frontmatter.thumbnail && (
@@ -53,7 +52,7 @@ const PostLink = ({ post }) => {
             component="img"
             alt={post.frontmatter.title}
             height="240"
-            image={post.frontmatter.thumbnail.childImageSharp.fluid.src}
+            image={getSrc(post.frontmatter.thumbnail.childImageSharp)}
             title={post.frontmatter.title}
             style={{textDecoration:"none"}}
             />
@@ -74,10 +73,14 @@ export default function PostList(props) {
     <StaticQuery
       query={graphql`
         query PostQuery {
-          allMdx(
+          allMarkdownRemark(
             limit: 100
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { fields: { collection: { eq: "posts" } } }
+            filter: { 
+              frontmatter: { 
+                disabled: { ne: true }
+              } 
+            }
             ) {
             edges {
               node {
@@ -85,19 +88,14 @@ export default function PostList(props) {
                 excerpt(pruneLength: 140)
                 frontmatter {
                   date(formatString: "MMMM DD, YYYY")
-                  path
+                  slug
                   title
+                  disabled
                   thumbnail {
                     childImageSharp {
-                      fluid {
-                          ...GatsbyImageSharpFluid
-                      }
+                      gatsbyImageData(layout: CONSTRAINED, width: 400)
                     }
                   }
-          
-                }
-                fields {
-                  slug
                 }
               }
             }
@@ -106,9 +104,9 @@ export default function PostList(props) {
       `}
       render={ (data) => {
         let counter = 0;
-        const Posts = data.allMdx.edges
-        .filter(edge => {
+        const posts = data.allMarkdownRemark.edges.filter(edge => {
           // You can filter your posts based on some criteria
+          // if (edge.node.frontmatter.disabled) return false;
           counter++;
           if ( counter > maxNumberOfPosts) return false;
           else return true;
@@ -118,13 +116,10 @@ export default function PostList(props) {
           <div style={{marginBottom:"3rem"}}>
             <h2>{props.title} &darr;</h2>
             <Grid container spacing={2}>
-              {Posts}
+              {posts}
             </Grid>
-
           </div>
-
         )
-       
         
       }}
     />

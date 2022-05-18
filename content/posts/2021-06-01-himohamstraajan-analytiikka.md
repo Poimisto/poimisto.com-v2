@@ -2,13 +2,13 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /himohamstraajan-analytiikka
+slug: /himohamstraajan-analytiikka
 date: 2021-06-01T21:37:37.006Z
 title: Himohamstraajan analytiikka
 metaDescription: Hyödyllinen web-analytiikan tekninen toteutus kehittyy
   orgaanisesti, osana yrityksen käyttötarpeiden ja kyvykkyyksien kasvun kanssa.
   Näin analyyiikan kehitystä ohjaa oikeasta maailmasta saatu palaute.
-thumbnail: /assets/oleksii-hlembotskyi-dw0-wvbqe7u-unsplash.jpg
+thumbnail: ../images/oleksii-hlembotskyi-dw0-wvbqe7u-unsplash.jpg
 ---
 Hyödyllinen analytiikan tekninen toteutus kehittyy orgaanisesti, osana yrityksen käyttötarpeiden ja kyvykkyyksien kasvun kanssa.
 

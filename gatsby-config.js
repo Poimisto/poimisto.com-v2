@@ -11,59 +11,14 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-remark-images`,
-      options: {
-        maxWidth: 1200,
-        backgroundColor: 'transparent', // required to display blurred image first
-        linkImagesToOriginal: false,
-        disableBgImageOnAlpha: true,
-      },
-    },
-    // required here so frontmatter stuff works
-    {
-      resolve: `gatsby-plugin-netlify-cms-paths`,
-      options: {
-        cmsConfig: `/static/admin/config.yml`,
-      }
-    }, 
-    {
-      resolve: `gatsby-plugin-mdx`,
-      options: {
-        extensions: [`.mdx`, `.md`],
-        gatsbyRemarkPlugins: [ 
-          // required here so body stuff works
-          {
-            resolve: `gatsby-plugin-netlify-cms-paths`,
-            options: {
-              cmsConfig: `/static/admin/config.yml`,
-            }
-          },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1200,
-              backgroundColor: 'transparent', // required to display blurred image first
-              linkImagesToOriginal: false,
-              disableBgImageOnAlpha: true,
-            },
-          },
-          {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              showLineNumbers: false,
-            }
-          },
-        ],
-      },
-    },
+    `gatsby-transformer-sharp`, // Needed for dynamic images
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `uploads`,
-        path: `${__dirname}/static/assets`,
+        name: `images`,
+        path: `${__dirname}/content/images`,
       },
     },
     {
@@ -74,43 +29,33 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: `pages`,
-        path: `${__dirname}/content/pages`,
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 800,
+            },
+          },
+        ],
       },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `people`,
-        path: `${__dirname}/content/people`,
-      },
-    },
-
-
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/cms.js`, // for custom preview in the Netlify CMS,
-      }
     },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Poimisto OY`,
+        short_name: `Poimisto`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/poimisto-short-300x300.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-    `gatsby-plugin-catch-links`,
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
@@ -147,7 +92,4 @@ module.exports = {
       }
     },
   ],
-  mapping: {
-    'mdx.frontmatter.thumbnail': `imageSharp.original.src`
-  },
 }

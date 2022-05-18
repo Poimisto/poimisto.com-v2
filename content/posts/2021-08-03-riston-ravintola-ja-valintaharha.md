@@ -2,10 +2,10 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /riston-ravintola-valintaharha
+slug: /riston-ravintola-valintaharha
 date: 2021-08-03T08:43:15.105Z
 title: "Riston ravintola ja valintaharha "
-thumbnail: /assets/shawnanggg-nmpw_wwwvsc-unsplash-1-.jpg
+thumbnail: ../images/shawnanggg-nmpw_wwwvsc-unsplash-1-.jpg
 imageCredit: "@shawnanggg"
 metaDescription: "Risto haluaa, että sellaiset ihmiset, jotka olisivat muuten
   syöneet kotona tai menneet Raijan ravintolaan, tulevat markkinoinnin ansiosta

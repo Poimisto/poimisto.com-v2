@@ -2,10 +2,10 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /rahantekokone
+slug: /rahantekokone
 date: 2022-04-21T21:33:25.911Z
 title: Rahantekokone
-thumbnail: /assets/alvaro-reyes-meldchumbu8-unsplash.jpg
+thumbnail: ../images/alvaro-reyes-meldchumbu8-unsplash.jpg
 imageCredit: Alvaro Reyes
 metaDescription: "- Tämä on rahantekokone. Kun reiästä laittaa yhden euron, niin
   hetken päästä toisesta reiästä tulee puolitoista euroa.  - Kuinka paljon

@@ -2,9 +2,9 @@
 template: BlogPost
 language: fi
 author: Santeri Salonen
-path: /miten-hyodynnat-dataa-jota-sinulla-ei-ole
+slug: /miten-hyodynnat-dataa-jota-sinulla-ei-ole
 date: 2020-12-30T09:06:33.306Z
-thumbnail: /assets/cam-adams-jz4gnqznxtu-unsplash.jpg
+thumbnail: ../images/cam-adams-jz4gnqznxtu-unsplash.jpg
 imageCredit: "@shawnanggg"
 title: Miten hyödynnät dataa, jota sinulla ei ole?
 imageCreditURL: https://unsplash.com/@shawnanggg

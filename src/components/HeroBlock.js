@@ -1,7 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
 
-import {Container} from './../templates/layout';
+import {Container} from './Layout';
 
 import styled from 'styled-components'
 import { getContrast } from 'polished'
@@ -11,7 +10,7 @@ import Background from './Background'
 
 
 const StyledBlock = styled.div`
-  color:${props => getContrast(props.theme.colors.darkest, props.bgColor || '#f3f3f3') > 10 ? props.theme.colors.darkest : props.theme.colors.lightest };
+  color:${props => getContrast(props.theme.colors.darkest, props.bgcolor || '#f3f3f3') > 10 ? props.theme.colors.darkest : props.theme.colors.lightest };
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -33,28 +32,30 @@ const HeroGrid = styled.div`
   grid-gap: 20px;
   @media (max-width: ${props => props.theme.mobileBreakpoint}px) {
     grid-template-columns: 1fr;
-
   }
-  .HeroBlockImage {
-    order: ${props => props.imageAlign.match(/none|left/) ? 0 : 1};
+  .hero-image {
+    order: ${props => (props.imagealign && props.imagealign.match(/none|left/)) ? 0 : 1};
     @media (max-width: ${props => props.theme.mobileBreakpoint}px) {
       order: 0;
     }
   }
-
 `;
 
-const HeroBlock = ({ children, bgColor, imageAlign, ...props }) => {
+const HeroBlock = ({ bgcolor, image, imagealign, content  }) => {
   
-  const bg = theme.colors[bgColor] || theme.colors.light;
-  const columns = (columns) ? columns : (imageAlign === 'none') ? 1 : 2;
+  const bg = theme.colors[bgcolor] || theme.colors.light;
+  const columns = (image) ? 2 : 1;
 
   return (
-    <StyledBlock bgColor={bg} {...props}>
+    <StyledBlock bgcolor={bg}>
       <Background background={bg} />
       <Container >
-        <HeroGrid imageAlign={imageAlign} columns={columns}>
-          {children}
+     
+        <HeroGrid imagealign={imagealign} columns={columns} >
+          {!!image && (
+           <div className="hero-image">{image}</div> 
+          )}
+          <div className="hero-content">{content}</div>
         </HeroGrid>
         
       </Container>
@@ -62,10 +63,5 @@ const HeroBlock = ({ children, bgColor, imageAlign, ...props }) => {
   )
  
 }
-/*
-CallToAction.propTypes = {
-  url: PropTypes.string.isRequired,
-  align: PropTypes.string,
-}
-*/
+
 export default HeroBlock
