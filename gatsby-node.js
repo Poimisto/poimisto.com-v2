@@ -21,7 +21,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `;
   createTypes(typeDefs);
-  createTypes(typeDefs)
 }
 
 exports.onCreateNode = async ({ node, getNode, actions }) => {
@@ -68,6 +67,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             fields {
               slug
             }
+            body
           }
         }
       }
