@@ -4,14 +4,18 @@ language: en
 author: Santeri Salonen
 slug: /gcp-deployment-manager-with-bigquery
 date: 2022-05-18T13:26:50.761Z
-title: Simple serverless data pipeline with GCP
+title: Serverless data pipeline with GCP and BigQuery
+thumbnail: ../images/bigquery.png
 disabled: true
 ---
-I am a big fan of using AWS Cloudformation when setting up data pipelines. With Cloudformation you can write your project requirements down as a YML-configuration file.
 
-Previous projects or pieces of a previous project can then be re-used. There is a tough learning curve, though.
+I am a big fan of using AWS Cloudformation when setting up data pipelines. With Cloudformation you can write your project requirements down as a YML-configuration file. Previous projects or pieces of a previous project can then be re-used. There is a tough learning curve, though.
 
 Lately most of my work have involved using Google Cloud Platform (GCP) and BigQuery. GCP's "Cloudformation" is called Deployment Manager. It works roughly the same but there are differences as well, like the need to set up a lot of things still manually, through the console.
+
+But in general, the benefits of this type of approach are clear:
+
+1. Everything is documented
 
 In this post I wanted to share some of the findings - in the form of step-by-step guide: How to setup a data pipeline with DM, BigQuery and Cloud functions.
 
