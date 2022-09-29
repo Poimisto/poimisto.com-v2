@@ -34,7 +34,7 @@ Datan hyödyntäminen ei ole kuitenkaan "tiimi" tai "hanke".
 
 Vaan pieniä päätöksiä. Se on organisaation funktiot ylittäviä käytäntöjä, rutiineja, kulttuuria. 
 
-Se teknologiastack tai datatiimi kasvaisi kyllä siihen ympärille. 
+Se teknologiastack, datatiimi tai sopivat mittarit kasvavaat kyllä siihen ympärille. 
 
 ## 2. Death by powerpoint
 
@@ -76,7 +76,7 @@ Kukaan ei ehdi ainakaan analysoimaan dataa.
 
 Tiimit raportoivat organisaatiossa ylöspäin erilaisia performanssimittareita.
 
-Hyvän raportin määritelmä on se, että tiimin tulokset näyttävät mahdollisimman hyviltä.
+Hyvän raportin määritelmä on, että tiimin tulokset näyttävät mahdollisimman hyviltä.
 
 Jos tiimin tulokset eivät näytä riittävän hyviltä, niin vika on raportissa. Datasta puuttuu jotain tai mittari on väärin määritelty.
 
